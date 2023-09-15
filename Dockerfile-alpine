@@ -5,16 +5,17 @@ RUN apk add --no-cache \
   chromium \
   ffmpeg 
 
+WORKDIR /app
+
 COPY package.json package*.json yarn.lock* pnpm-lock.yaml* bun.lockb* tsconfig.json* remotion.config.* ./
 COPY src ./src
 
 RUN npm i
-RUN rm -rf node_modules/@remotion/renderer
+RUN rm -rf node_modules/@remotion/renderer/dist
 RUN ls node_modules
 
-ADD tmp-renderer-package ./node_modules/@remotion/renderer
+ADD tmp-renderer-package ./node_modules/@remotion/renderer/dist
 
-WORKDIR /app
 
 # Run your application
 COPY render.mjs render.mjs

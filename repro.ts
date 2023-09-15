@@ -4,7 +4,7 @@ import {rmSync} from 'node:fs';
 Bun.spawnSync([
 	'cp',
 	'-r',
-	'../remotion/packages/renderer',
+	'../remotion/packages/renderer/dist',
 	'tmp-renderer-package',
 ]);
 

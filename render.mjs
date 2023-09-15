@@ -1,7 +1,9 @@
 import {bundle} from '@remotion/bundler';
 import {renderMedia, selectComposition} from '@remotion/renderer';
+import {readdirSync} from 'node:fs';
 import {createRequire} from 'node:module';
 const require = createRequire(import.meta.url);
+console.log('hi there', readdirSync('node_modules/@remotion'));
 const bundled = await bundle({
 	entryPoint: require.resolve('./src/index.ts'),
 	// If you have a Webpack override, make sure to import it here

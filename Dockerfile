@@ -1,12 +1,8 @@
 FROM node:16-alpine
 RUN apk update
 RUN apk add --no-cache \
-  libc6-compat \
   chromium \
-  ffmpeg \
-  dbus \
-  openrc \
-  git
+  ffmpeg 
 
 WORKDIR /app
 

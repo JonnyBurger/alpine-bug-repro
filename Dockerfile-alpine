@@ -15,8 +15,8 @@ RUN npm i
 RUN rm -rf node_modules/@remotion/renderer/dist
 RUN ls node_modules
 
-ADD tmp-renderer-package ./node_modules/@remotion/renderer/dist
-
+# ADD tmp-renderer-package ./node_modules/@remotion/renderer/dist
+# ADD tmp-compositor-package ./node_modules/@remotion/compositor-linux-arm64-musl
 
 # Run your application
 COPY render.mjs render.mjs

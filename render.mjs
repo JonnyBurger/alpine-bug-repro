@@ -1,9 +1,8 @@
 import {bundle} from '@remotion/bundler';
 import {renderMedia, selectComposition} from '@remotion/renderer';
-import {readdirSync} from 'node:fs';
 import {createRequire} from 'node:module';
 const require = createRequire(import.meta.url);
-console.log('hi there', readdirSync('node_modules/@remotion'));
+
 const bundled = await bundle({
 	entryPoint: require.resolve('./src/index.ts'),
 	// If you have a Webpack override, make sure to import it here
@@ -13,6 +12,7 @@ const composition = await selectComposition({
 	serveUrl: bundled,
 	id: 'MyComp',
 });
+
 console.log('Starting to render composition');
 await renderMedia({
 	codec: 'h264',
@@ -23,5 +23,12 @@ await renderMedia({
 	onProgress: (i) => {
 		console.log(i.renderedFrames);
 	},
+	onDownload: (i) => {
+		console.log(i);
+		return ({percent}) => {
+			console.log({percent});
+		};
+	},
+	timeoutInMilliseconds: 90000,
 });
 console.log(`Rendered composition ${composition.id}.`);

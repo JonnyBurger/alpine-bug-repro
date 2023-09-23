@@ -10,8 +10,19 @@ export const myCompSchema = z.object({
 
 export const MyComposition: React.FC<z.infer<typeof myCompSchema>> = () => {
 	return (
-		<AbsoluteFill className="bg-gray-100 items-center justify-center">
-			<OffthreadVideo src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
+		<AbsoluteFill
+			style={{
+				justifyContent: 'center',
+				alignItems: 'center',
+			}}
+		>
+			<OffthreadVideo
+				style={{
+					width: '70%',
+					boxShadow: '0 0 200px black',
+				}}
+				src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+			/>
 		</AbsoluteFill>
 	);
 };

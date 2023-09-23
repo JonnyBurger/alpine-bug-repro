@@ -26,7 +26,7 @@ await renderMedia({
 	onDownload: (i) => {
 		console.log(i);
 		return ({percent}) => {
-			console.log({percent});
+			// console.log({percent});
 		};
 	},
 	timeoutInMilliseconds: 90000,

@@ -56,7 +56,7 @@ RUN apt-get update && \
   fonts-tlwg-sawasdee-ttf fonts-tlwg-typewriter-ttf \
   fonts-tlwg-typist-ttf fonts-tlwg-typo-ttf \
   fonts-tlwg-umpush-ttf fonts-tlwg-waree-ttf \
-  ttf-bitstream-vera ttf-dejavu-core ttf-ubuntu-font-family \
+  ttf-bitstream-vera \
   fonts-arphic-ukai fonts-arphic-uming \
   fonts-ipafont-mincho fonts-ipafont-gothic \
   fonts-unfonts-core && \

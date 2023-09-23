@@ -12,7 +12,7 @@ COPY package.json package*.json yarn.lock* pnpm-lock.yaml* bun.lockb* tsconfig.j
 COPY src ./src
 
 RUN npm i
-RUN rm -rf node_modules/@remotion/renderer/dist
+# RUN rm -rf node_modules/@remotion/renderer/dist
 RUN ls node_modules
 
 # ADD tmp-renderer-package ./node_modules/@remotion/renderer/dist
